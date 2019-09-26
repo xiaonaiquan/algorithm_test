@@ -69,3 +69,31 @@ int main()
 
 ```
 
+> > 找出数组中出现次数最多的字符，打印出该字符和出现的次数
+
+```c++
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	const char *ps = "hahhah";
+	size_t counts[256] = {0};
+	char c = '\0';
+	for (const char* p = ps; *p; ++p)
+	{
+		cout << *p << endl;
+		
+		cout << "++counts :" << ++counts[*p] << endl;
+		if (counts[*p] > counts[c])
+		{
+			c = *p;
+		}
+	}
+	cout << c << counts[c] << endl;
+	system("PAUSE");
+	return 0;
+}
+```
+
